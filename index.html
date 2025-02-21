@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Libros de Fabiana Lucía</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        .hero {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .typing-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            width: 0;
+            animation: typing 3.5s steps(40, end),
+                       blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white; }
+        }
+
+        .books-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .audio-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .audio-section h2 {
+            color: #e2e2e2;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .audio-list {
+            display: grid;
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .audio-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .audio-card:active {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(0.98);
+        }
+
+        .audio-icon {
+            color: #c4a7e7;
+            font-size: 2rem;
+        }
+
+        .audio-info {
+            flex-grow: 1;
+        }
+
+        .audio-title {
+            color: #e2e2e2;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .audio-book {
+            color: #9ba4b4;
+            font-size: 0.9rem;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            margin-top: 1rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 1.5rem;
+        }
+
+        .book-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .book-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover {
+            transform: scale(1.05);
+        }
+
+       /* Update existing media queries and add new ones */
+       @media (max-width: 768px) {
+            .typing-title {
+                font-size: 1.8rem;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: none;
+                /*width: 100% !important;*/
+                width: 0;
+                animation: typing-mobile 1.5s steps(40, end) forwards,
+                           blink-caret .75s step-end infinite;
+                /*text-align: center;*/
+            }
+            .typing-title2 {
+                font-size: 1.8rem;
+                white-space: nowrap;
+                overflow: hidden;
+                border-right: none;
+                /*width: 100% !important;*/
+                width: 0;
+                animation: typing-mobile 1.5s steps(40, end) forwards,
+                           blink-caret .75s step-end infinite;
+                animation-delay: 1s;
+                /*text-align: center;*/
+
+                
+            }
+            
+
+            @keyframes typing-mobile {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+            .hero-content {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .book-card {
+                max-width: 100%;
+            }
+
+            .audio-section {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+
+            .audio-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .audio-info {
+                width: 100%;
+            }
+
+            audio {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .typing-title {
+                font-size: 1.5rem;
+                width: 0;
+                padding: 0 1rem;
+            }
+
+            .book-image {
+                height: 250px;
+            }
+
+            .book-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        footer {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            color: #e2e2e2;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-section {
+            padding: 1rem;
+        }
+
+        .footer-section h3 {
+            color: #c4a7e7;
+            margin-bottom: 1rem;
+            font-family: cursive;
+        }
+
+        .footer-section p {
+            color: #9ba4b4;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #e2e2e2;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #c4a7e7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: #9ba4b4;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="library-background.png" alt="Library Background" class="hero-image">
+        <div class="hero-content">
+            <h1 class="typing-title">Sección de Libros </h1>
+            <h1 class="typing-title2">Fabiana Lucía </h1>
+            
+        </div>
+    </div>
+       
+
+
+    <div class="books-container">
+        <div class="books-grid">
+            <div class="book-card">
+                <img src="arcoiriss.jpg.jpg" alt="Rubí" class="book-image">
+                <div class="book-info">
+                    <h2 class="book-title">Rubí: El Arcoíris que Quería ser Humana</h2>
+                    <p class="book-description">Una mágica historia sobre el descubrimiento de uno mismo y la aceptación.</p>
+                    <a href="./rubi/rubi.html" class="read-more">Leer</a>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="./perico/portada.png" alt="Perico" class="book-image">
+                <div class="book-info">
+                    <h2 class="book-title">El Perico Dientes de Sable</h2>
+                    <p class="book-description">Una mágica historia sobre la valentía .</p>
+                    <a href="./perico/perico.html" class="read-more">Leer</a>
+                </div>
+            </div>
+            <!-- Más tarjetas de libros se pueden agregar aquí -->
+        </div>
+    </div>
+    <div class="audio-section">
+                <h2 style="font-family: cursive;">
+            ♪ Escucha la Playlist ♪</h2>
+        <div class="audio-list">
+            <div class="audio-card">
+                <div class="audio-icon">♪</div>
+                <div class="audio-info">
+                    <div class="audio-title">Colores en el Cielo</div>
+                    <div class="audio-book">Rubí: El Arcoíris que Quería ser Humana</div>
+                    <audio controls>
+                        <source src="./rubi/arcoiris.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="audio-card">
+                <div class="audio-icon">♪</div>
+                <div class="audio-info">
+                    <div class="audio-title">Aventuras de Perico</div>
+                    <div class="audio-book">El Perico Dientes de Sable</div>
+                    <audio controls>
+                        <source src="./perico/cancion-tiko.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre la Autora</h3>
+                <p>Fabiana Lucía es una escritora apasionada por crear historias mágicas que inspiran a los niños a soñar y crecer.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Compárteme tus ideas para mis siguientes libros</h2>
+                
+                <p>Email: fabilibros@gmail.com</p>
+                <p>Tel: (0416) 695-0614</p>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-links">
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="Facebook">👥</a>
+                    <a href="#" title="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fabiana Lucía | Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        
+    </script>
+</body>
+</html>
