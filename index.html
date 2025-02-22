@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     
     <title>Libros de Fabiana Lucía</title>
     <style>
@@ -24,8 +26,10 @@
             position: relative;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            
         }
 
         .hero-image {
@@ -45,6 +49,9 @@
             text-align: center;
             color: white;
             padding: 2rem;
+            font-family: cursive;
+            z-index: 300;
+            
         }
 
         .typing-title {
@@ -57,6 +64,7 @@
             width: 0;
             animation: typing 3.5s steps(40, end),
                        blink-caret .75s step-end infinite;
+                       
         }
 
         @keyframes typing {
@@ -191,7 +199,8 @@
         .read-more {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+        
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -211,7 +220,7 @@
                 border-right: none;
                 /*width: 100% !important;*/
                 width: 0;
-                animation: typing-mobile 1.5s steps(40, end) forwards,
+                animation: typing-mobile .8s steps(40, end) forwards,
                            blink-caret .75s step-end infinite;
                 /*text-align: center;*/
             }
@@ -348,21 +357,85 @@
             color: #9ba4b4;
         }
         
+        .btn{
+            padding: .5rem 1rem;
+            
+            z-index: 1000;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            color: #c4a7e7;
+            border: none;
+            font-size: 1.5rem;
+            border-radius: .8rem;
+            box-shadow: 0 0 5px 1px #222;
+            position: absolute;
+            bottom: 4rem;
+            font-family: Sans-Serif,cursive;
+            animation: aparecer .6s ease forwards;
+            animation-delay: 1.6s;
+            transform: scale(0);
+            opacity: .6;
+            
+            
+        }
+        
+        @keyframes aparecer{
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(1.6);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        .back{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,10,0.65);
+            top: 0;
+            z-index: 200;
+            animation: oscurecer 1s ease forwards;
+        }
+        
+        @keyframes oscurecer{
+            from{
+                background:none;
+            }
+            to{
+                rgba(0,0,10,0.65)
+            }
+        }
+        .subtitle{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="hero">
+        <div class="back"></div>
         <img src="library-background.png" alt="Library Background" class="hero-image">
+        
         <div class="hero-content">
-            <h1 class="typing-title">Sección de Libros </h1>
+            <h1 class="typing-title">Mis Libros </h1>
             <h1 class="typing-title2">Fabiana Lucía </h1>
             
         </div>
+        
+        <button class="btn" type="submit">
+            <span><i class="fas fa-heart"></i>
+</span>Comenzar
+        </button>
+        
     </div>
        
 
-
+    
     <div class="books-container">
+        <h2 class="subtitle">Libros Infantiles</h2>
+        
+        <hr>
         <div class="books-grid">
             <div class="book-card">
                 <img src="arcoiriss.jpg.jpg" alt="Rubí" class="book-image">
@@ -383,7 +456,9 @@
             </div>
             <!-- Más tarjetas de libros se pueden agregar aquí -->
         </div>
+        <hr>
     </div>
+    
     <div class="audio-section">
                 <h2 style="font-family: cursive;">
             ♪ Escucha la Playlist ♪</h2>
@@ -422,8 +497,8 @@
             <div class="footer-section">
                 <h3>Compárteme tus ideas para mis siguientes libros</h2>
                 
-                <p>Email: fabilibros@gmail.com</p>
-                <p>Tel: (0416) 695-0614</p>
+                <p>Email: lucilibros2018@gmail.com</p>
+                
             </div>
             <div class="footer-section">
                 <h3>Sígueme</h3>
@@ -440,6 +515,16 @@
     </footer>
 
     <script>
+        "use strict";
+        
+        const start = document.querySelector(".btn");
+        
+        start.addEventListener("click",()=>{
+            const books = document.querySelector(".books-container");
+            
+            books.scrollIntoView({behavior:"smooth"
+            })
+        })
         
     </script>
 </body>
