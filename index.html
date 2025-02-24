@@ -684,6 +684,14 @@
                     <img src="./princess/princesa-castillo.jpg" alt="Princesa">
                 </div>
             </li>
+
+            <li class="nav-item" data-book="spike2">
+                <i class="fas fa-anchor"></i>
+                <span class="book-name">El Perro Pirara Pt. 2</span>
+                <div class="book-preview">
+                    <img src="./spike/dragon-tesoro.png" alt="spike2">
+                </div>
+            </li>
         </ul>
     </nav>
     
@@ -900,6 +908,10 @@
                         break;
                     case 'rubi':
                         bookCard = document.querySelector('.book-card img[alt="Rubí"]').closest('.book-card');
+                        break;
+
+                    case 'spike2':
+                        bookCard = document.querySelector('.book-card img[alt="spike2"]').closest('.book-card');
                         break;
                 }
                 if (bookCard) {
