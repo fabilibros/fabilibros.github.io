@@ -629,6 +629,77 @@
                 display: none;
         }
     }
+
+    .book-card.spin-off {
+        background: linear-gradient(145deg, #1a1a2e, #16213e);
+        border: 2px solid #8b0000;
+        position: relative;
+        overflow: visible;
+    }
+
+    .book-card.spin-off::before {
+        content: "Spin-off";
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background: #8b0000;
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        z-index: 1;
+    }
+
+    .book-card.spin-off .book-title,
+    .book-card.spin-off .book-description {
+        color: #e2e2e2;
+    }
+
+    .nav-item.spin-off {
+        background: linear-gradient(145deg, #1a1a2e, #16213e);
+        border: 1px solid #8b0000;
+        position: relative;
+    }
+
+    .nav-item.spin-off::after {
+        content: "★";
+        position: absolute;
+        right: 10px;
+        color: #8b0000;
+        font-size: 1.2rem;
+    }
+
+    .nav-item.spin-off i {
+        color: #8b0000;
+    }
+
+    .nav-item.spin-off .book-name {
+        color: #c4a7e7;
+    }
+
+    .audio-card.ancient {
+        background: linear-gradient(145deg, #1a0f0f, #2b0000);
+        border: 1px solid #8b0000;
+        position: relative;
+    }
+
+    .audio-card.ancient .audio-icon {
+        color: #8b0000;
+    }
+
+    .audio-card.ancient::before {
+        content: "★";
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #8b0000;
+        font-size: 1.2rem;
+    }
+
+    .audio-card.ancient .audio-title {
+        color: #ffd700;
+    }
     
     </style>
 </head>
@@ -685,11 +756,11 @@
                 </div>
             </li>
 
-            <li class="nav-item" data-book="spike2">
-                <i class="fas fa-anchor"></i>
-                <span class="book-name">El Perro Pirara Pt. 2</span>
+            <li class="nav-item spin-off" data-book="dragon">
+                <i class="fas fa-dragon"></i>
+                <span class="book-name">La Maldición del Oro</span>
                 <div class="book-preview">
-                    <img src="./spike/dragon-tesoro.png" alt="spike2">
+                    <img src="./dragon/ancient-kingdom.jpg" alt="Dragon Story">
                 </div>
             </li>
         </ul>
@@ -742,6 +813,15 @@
                     <h2 class="book-title">Spike: El Perro Pirata (Parte 2)</h2>
                     <p class="book-description">Nueva entrega de la épica historia del perro más audaz de todos, Spike. </p>
                     <a href="./spike/spike-part2.html" class="read-more"><i class="fas fa-book-open"></i> Leer</a>
+                </div>
+            </div>
+
+            <div class="book-card spin-off">
+                <img src="./dragon/ancient-kingdom.jpg" alt="dragon-story" class="book-image">
+                <div class="book-info">
+                    <h2 class="book-title">La Maldición del Oro: Una Historia Antigua</h2>
+                    <p class="book-description">Descubre la verdadera historia detrás del tesoro que Spike encontró: una épica leyenda de dragones, magia y codicia.</p>
+                    <a href="./dragon/dragon.html" class="read-more"><i class="fas fa-book-open"></i> Leer</a>
                 </div>
             </div>
         
@@ -837,6 +917,18 @@
                 </div>
             </div>
 
+            <div class="audio-card ancient">
+                <div class="audio-icon">♪</div>
+                <div class="audio-info">
+                    <div class="audio-title">Ecos del Pasado</div>
+                    <div class="audio-book">La Maldición del Oro: Una Historia Antigua</div>
+                    <audio controls>
+                        <source src="./dragon/Ecos del Pasado.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+            </div>
+
 
         </div>
     </div>
@@ -909,11 +1001,10 @@
                     case 'rubi':
                         bookCard = document.querySelector('.book-card img[alt="Rubí"]').closest('.book-card');
                         break;
-
-                    case 'spike2':
-                        bookCard = document.querySelector('.book-card img[alt="spike2"]').closest('.book-card');
+                        case 'dragon':
+                        bookCard = document.querySelector('.book-card.spin-off').closest('.book-card');
                         break;
-                }
+                    }
                 if (bookCard) {
                     bookCard.scrollIntoView({ behavior: 'smooth' });
                 }
