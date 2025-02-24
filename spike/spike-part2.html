@@ -144,6 +144,33 @@
             margin: 1rem auto;
             border-radius: 30px;
         }
+                /* ... existing styles ... */
+                .dialogue {
+            color: #ffd700;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .video-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+            border: 1px solid #daa520;
+            box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #daa520;
+        }
+
+        .video-container h2 {
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -166,48 +193,56 @@
             <h2>Capítulo 6: El Duelo de Ingenio (¿final?)</h2>
             <img src="dragon-tesoro.png" alt="Dragón y Spike" class="chapter-image">
             <p>Spike miró fijamente a los ojos del dragón, su mente trabajando rápidamente en el acertijo. El resplandor dorado del tesoro iluminaba la cueva, creando sombras danzantes en las paredes.
-            
-                    Tras un momento de reflexión, Spike respondió con firmeza: "La respuesta es el corazón".
 
-                    El dragón arqueó una ceja, sorprendido. "Interesante... muy interesante. Pero no creas que será tan fácil, pequeño aventurero. Veamos qué tan astuto eres realmente." Sus ojos brillaron con un destello de astucia. "Responde esto: 'Soy el principio del miedo, el final del tiempo y el comienzo de la eternidad. ¿Qué soy?'"
-
-                    Spike sonrió, mostrando sus colmillos. "Es la letra 'E', señor dragón. El principio de 'miedo', el final de 'time' y el comienzo de 'eternidad'."
-
-                    "¡Impresionante!" rugió el dragón, aunque su voz denotaba cierta frustración. "Pero aquí viene algo más complejo: 'Cuanto más me quitas, más grande me vuelvo. ¿Qué soy?'"
-
-                    "Un agujero", respondió Spike sin titubear. "Cuanto más tierra le quitas, más grande se hace."
-
-                    El dragón comenzó a pasearse por la caverna, sus escamas brillando con reflejos dorados. "En todos mis años, nunca había encontrado una mente tan ágil en un ser tan pequeño. Pero tengo una última prueba para ti: 'Soy lo que soy, pero si me nombras, dejo de ser lo que soy. ¿Qué soy?'"
-
-                    Spike cerró los ojos por un momento, pensativo. "El silencio", respondió suavemente.
-
-                    El dragón se detuvo en seco, sus enormes alas plegándose contra su cuerpo. "Spike, el perro pirata, has demostrado no solo valentía al adentrarte en estas cuevas, sino una sabiduría que pocos poseen." Su voz se tornó grave y preocupada. "Sin embargo, debo advertirte sobre algo crucial."
-
-                    "¿Qué sucede?" preguntó Spike, notando el cambio en el tono del dragón.
-
-                    "Este tesoro... estas piedras doradas que tanto has buscado... llevan consigo una maldición antigua. Durante doscientos mil años he sido su guardián, no por codicia, sino por deber. La maldición que contienen podría devastar al mundo exterior si alguna vez saliera de esta cueva."
-
-                    Spike observó las montañas de oro que lo rodeaban, ahora con una nueva perspectiva. "¿Qué tipo de maldición?"
-
-                    El dragón se acercó, su aliento cálido moviendo el pelaje de Spike. "Una maldición que puede corromper el corazón más puro, transformar el amor en odio, la alegría en desesperación. He visto imperios caer por apenas una de estas piedras. La codicia que despiertan... es solo el principio."
-
-                    "Pero entonces, ¿por qué permitirme llegar hasta aquí?" cuestionó Spike.
-
-                    Los ojos del dragón brillaron con un destello de esperanza. "Porque en todos estos milenios, nunca había encontrado a alguien como tú. Alguien que pudiera ver más allá de lo evidente, que pudiera resolver los acertijos no solo con inteligencia, sino con sabiduría. Quizás... quizás tú podrías ser la clave para romper esta maldición."
-
-                    "¿Romper la maldición? ¿Cómo?"
-
-                    El dragón extendió sus alas, creando sombras que danzaban por toda la caverna. "Existe una manera... pero el precio podría ser demasiado alto, incluso para alguien tan valiente como tú. La decisión que deberás tomar podría cambiar no solo tu destino, sino el de todos los que conoces."
-
-                    Spike miró hacia la entrada de la cueva, pensando en su amo que lo esperaba arriba. "¿Cuál es esa decisión?"
-
-                    El dragón sonrió misteriosamente, sus dientes brillando en la penumbra. "Primero, debes entender la verdadera naturaleza de esta maldición. Una historia que comenzó hace milenios, cuando los dioses aún caminaban entre los mortales..."
-
-                    Continuará...
-                </p>
+                Tras un momento de reflexión, Spike respondió con firmeza: <span class="dialogue">"La respuesta es el corazón".</span>
+                
+                El dragón arqueó una ceja, sorprendido. <span class="dialogue">"Interesante... muy interesante. Pero no creas que será tan fácil, pequeño aventurero. Veamos qué tan astuto eres realmente."</span> Sus ojos brillaron con un destello de astucia. <span class="dialogue">"Responde esto: 'Soy el principio del miedo, el final del tiempo y el comienzo de la eternidad. ¿Qué soy?'"</span>
+                
+                Spike sonrió, mostrando sus colmillos. <span class="dialogue">"Es la letra 'E', señor dragón. El principio de 'miedo', el final de 'tiempo' y el comienzo de 'eternidad'."</span>
+                
+                <span class="dialogue">"¡Impresionante!"</span> rugió el dragón, aunque su voz denotaba cierta frustración. <span class="dialogue">"Pero aquí viene algo más complejo: 'Cuanto más me quitas, más grande me vuelvo. ¿Qué soy?'"</span>
+                
+                <span class="dialogue">"Un agujero"</span>, respondió Spike sin titubear. <span class="dialogue">"Cuanto más tierra le quitas, más grande se hace."</span>
+                
+                El dragón comenzó a pasearse por la caverna, sus escamas brillando con reflejos dorados. <span class="dialogue">"En todos mis años, nunca había encontrado una mente tan ágil en un ser tan pequeño. Pero tengo una última prueba para ti: 'Soy lo que soy, pero si me nombras, dejo de ser lo que soy. ¿Qué soy?'"</span>
+                
+                Spike cerró los ojos por un momento, pensativo. <span class="dialogue">"El silencio"</span>, respondió suavemente.
+                
+                El dragón se detuvo en seco, sus enormes alas plegándose contra su cuerpo. <span class="dialogue">"Spike, el perro pirata, has demostrado no solo valentía al adentrarte en estas cuevas, sino una sabiduría que pocos poseen."</span> Su voz se tornó grave y preocupada. <span class="dialogue">"Sin embargo, debo advertirte sobre algo crucial."</span>
+                
+                <span class="dialogue">"¿Qué sucede?"</span> preguntó Spike, notando el cambio en el tono del dragón.
+                
+                <span class="dialogue">"Este tesoro... estas piedras doradas que tanto has buscado... llevan consigo una maldición antigua. Durante doscientos mil años he sido su guardián, no por codicia, sino por deber. La maldición que contienen podría devastar al mundo exterior si alguna vez saliera de esta cueva."</span>
+                
+                Spike observó las montañas de oro que lo rodeaban, ahora con una nueva perspectiva. <span class="dialogue">"¿Qué tipo de maldición?"</span>
+                
+                El dragón se acercó, su aliento cálido moviendo el pelaje de Spike. <span class="dialogue">"Una maldición que puede corromper el corazón más puro, transformar el amor en odio, la alegría en desesperación. He visto imperios caer por apenas una de estas piedras. La codicia que despiertan... es solo el principio."</span>
+                
+                <span class="dialogue">"Pero entonces, ¿por qué permitirme llegar hasta aquí?"</span> cuestionó Spike.
+                
+                Los ojos del dragón brillaron con un destello de esperanza. <span class="dialogue">"Porque en todos estos milenios, nunca había encontrado a alguien como tú. Alguien que pudiera ver más allá de lo evidente, que pudiera resolver los acertijos no solo con inteligencia, sino con sabiduría. Quizás... quizás tú podrías ser la clave para romper esta maldición."</span>
+                
+                <span class="dialogue">"¿Romper la maldición? ¿Cómo?"</span>
+                
+                El dragón extendió sus alas, creando sombras que danzaban por toda la caverna. <span class="dialogue">"Existe una manera... pero el precio podría ser demasiado alto, incluso para alguien tan valiente como tú. La decisión que deberás tomar podría cambiar no solo tu destino, sino el de todos los que conoces."</span>
+                
+                Spike miró hacia la entrada de la cueva, pensando en su amo que lo esperaba arriba. <span class="dialogue">"¿Cuál es esa decisión?"</span>
+                
+                El dragón sonrió misteriosamente, sus dientes brillando en la penumbra. <span class="dialogue">"Primero, debes entender la verdadera naturaleza de esta maldición. Una historia que comenzó hace milenios, cuando los dioses aún caminaban entre los mortales..."</span>
+                
+                Continuará...</p>
             </div>
         </div>
     </div>
+
+    <div class="video-container">
+        <h2>El Encuentro con el Dragón</h2>
+        <video controls loop>
+            <source src="dragon.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+</div>
 
     <footer>
         <p>
