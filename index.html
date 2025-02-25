@@ -711,6 +711,11 @@
     .audio-card.ancient .audio-title {
         color: #ffd700;
     }
+
+    h5{
+        text-align: center;
+        color: #c4a7e7;
+    }
     
     </style>
 </head>
@@ -779,6 +784,15 @@
                 <span class="book-name">La Maldición del Oro</span>
                 <div class="book-preview">
                     <img src="./dragon/ancient-kingdom.jpg" alt="Dragon Story">
+                </div>
+            </li>
+            <br>
+            <h5><i class="fas fa-music"></i></h5>
+            <li class="nav-item audio-li" data-audio="audio">
+                <i class="fas fa-music"></i>
+                <span class="book-name">Lista de Canciones</span>
+                <div class="book-preview">
+                    <img src="./notas-musicales.jpg" alt="audio">
                 </div>
             </li>
         </ul>
@@ -990,6 +1004,7 @@
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const navItems = document.querySelectorAll('.nav-item');
+        const audioLi = document.querySelector('.audio-li');
         
         // Botón de inicio
         start.addEventListener("click", () => {
@@ -1001,6 +1016,7 @@
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
+        
 
         navItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -1036,6 +1052,11 @@
             });
         });
 
+        //dirigir vista hacia la seccion de audio
+        audioLi.addEventListener('click', () => {
+            const audioSection = document.querySelector('.audio-section');
+            audioSection.scrollIntoView({ behavior: 'smooth' });
+        });
         // Cerrar menú al hacer clic fuera
         document.addEventListener('click', (e) => {
             if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
