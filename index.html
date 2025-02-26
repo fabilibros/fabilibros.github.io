@@ -787,6 +787,16 @@
                 </div>
             </li>
 
+            <li class="nav-item" data-book="lila">
+                <i class="fas fa-lightbulb"></i>
+                <span class="book-name">Lila y el Misterio de la Luz Robada</span>
+                <div class="book-preview">
+                    <img src="./lila/night-village.jpg" alt="lila">
+                </div>
+            </li>
+
+            
+
             <li class="nav-item" data-book="jardin">
                 <i class="fas fa-clock"></i>
                 <span class="book-name">El Jardín de los Relojes Dormidos</span>
@@ -872,6 +882,15 @@
                     <h2 class="book-title">El Jardín de los Relojes Dormidos</h2>
                     <p class="book-description">Una mágica historia sobre el tiempo, los recuerdos y el poder de los momentos especiales que guardamos en el corazón.</p>
                     <a href="./el jardin/jardin.html" class="read-more"><i class="fas fa-book-open"></i> Leer</a>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <img src="./lila/night-village.jpg" alt="lila" class="book-image">
+                <div class="book-info">
+                    <h2 class="book-title">Lila y el Misterio de la Luz Robada <i class="fas fa-lightbulb" ></i></h2>
+                    <p class="book-description">Una historia que cuenta como la fantasía puede pertenecer a la realidad.</p>
+                    <a href="./lila/lila.html" class="read-more"><i class="fas fa-book-open"></i> Leer</a>
                 </div>
             </div>
             
@@ -992,6 +1011,18 @@
                 </div>
             </div>
 
+            <div class="audio-card">
+                <div class="audio-icon">♪</div>
+                <div class="audio-info">
+                    <div class="audio-title">Sombras Nocturnas</div>
+                    <div class="audio-book">Lila y el Misterio de la Luz Robada</div>
+                    <audio controls>
+                        <source src="./lila/shadows melody.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+            </div>
+
 
         </div>
     </div>
@@ -1077,6 +1108,9 @@
                         break;
                         case 'jardin':
                         bookCard = document.querySelector('.book-card img[alt="Jardín Mágico"]').closest('.book-card');
+                         break;
+                        case 'lila':
+                        bookCard = document.querySelector('.book-card img[alt="lila"]').closest('.book-card');
                          break;
                     }
                 if (bookCard) {
