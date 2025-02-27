@@ -716,8 +716,74 @@
         text-align: center;
         color: #c4a7e7;
     }
-    
+
+    /* Estilos específicos para el book-card de Noé */
+    .book-card.noe-card {
+        background: #121212; /* Fondo ligeramente más claro que el body de Noé */
+        border-radius: 10px; /* Menos redondeado para un estilo más tecnológico */
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2); /* Sombra cian suave */
+        border: 1px solid #00bbbb; /* Borde teal sutil */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones adicionales */
+    }
+
+    .book-card.noe-card:hover {
+        transform: translateY(-7px); /* Más elevado al hacer hover */
+        box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4); /* Sombra cian más intensa en hover */
+    }
+
+    .book-card.noe-card .book-image {
+        width: 100%;
+        height: 300px; /* Altura fija para la imagen */
+        object-fit: cover;
+        filter: brightness(0.8) contrast(1.1) grayscale(0.1); /* Filtro para integrar con la paleta Noé */
+        border-bottom: 1px solid #00bbbb; /* Borde inferior teal para la imagen */
+    }
+
+    .book-card.noe-card .book-info {
+        padding: 1.5rem;
+    }
+
+    .book-card.noe-card .book-title {
+        font-size: 1.6rem; /* Ligeramente más grande */
+        margin-bottom: 1rem;
+        color: #00ffff; /* Título en cian */
+        text-shadow: 1px 1px 2px #000; /* Sombra para el título */
+        font-family: 'monospace', monospace; /* Fuente monospace o similar */
+    }
+
+    .book-card.noe-card .book-description {
+        color: #c0c0c0; /* Descripción en gris claro */
+        margin-bottom: 1.2rem; /* Más espacio inferior */
+        font-size: 1.1rem; /* Ligeramente más grande */
+    }
+
+    .book-card.noe-card .read-more {
+        display: inline-block;
+        padding: 0.9rem 1.7rem; /* Botón ligeramente más grande */
+        background: linear-gradient(45deg, #00dddd, #00bbbb); /* Gradiente teal para el botón */
+        color: #121212; /* Texto del botón en gris oscuro */
+        text-decoration: none;
+        border-radius: 8px; /* Botón menos redondeado */
+        font-weight: bold;
+        transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave para el botón */
+    }
+
+    .book-card.noe-card .read-more:hover {
+        transform: scale(1.08); /* Escalar un poco más en hover */
+        background: linear-gradient(45deg, #00ffff, #00dddd); /* Gradiente cian en hover */
+        color: #1a1a1a; /* Texto ligeramente más oscuro en hover */
+    }
+
+    .nav-item-code{
+        border: 1px solid #00ffff;
+        color: #00ffff; /* Título en cian */
+        text-shadow: 1px 1px 2px #000;
+    }
+        
     </style>
+    
 </head>
 <body>
     <div class="hero">
@@ -802,6 +868,14 @@
                 <span class="book-name">El Jardín de los Relojes Dormidos</span>
                 <div class="book-preview">
                     <img src="./el jardin/magical-garden.jpg" alt="Jardín Mágico">
+                </div>
+            </li>
+
+            <li class="nav-item" data-book="neo">
+                <i class="fas fa-code"></i>
+                <span class="book-name"></span>
+                <div class="book-preview">
+                    <img src="./neo/dark-ai-decision.png" alt="neo">
                 </div>
             </li>
 
@@ -893,6 +967,15 @@
                     <a href="./lila/lila.html" class="read-more"><i class="fas fa-book-open"></i> Leer</a>
                 </div>
             </div>
+
+            <div class="book-card noe-card">
+                <img src="neo-veridia-cityscape.jpg" alt="Noé y Oscuro AI" class="book-image">
+                <div class="book-info">
+                <h2 class="book-title">Noé y el Despertar de Oscuro AI</h2>
+                <p class="book-description">En la metrópolis cyberpunk de Neo-Veridia, un joven genio desafía a la inteligencia artificial global en una lucha por el futuro de la humanidad.</p>
+                <a href="./noe/noe.html" class="read-more"><i class="fas fa-book-open"></i> Leer más</a>
+            </div>
+        </div>
             
         
         </div>
@@ -1023,6 +1106,18 @@
                 </div>
             </div>
 
+            <div class="audio-card">
+                <div class="audio-icon">♪</div>
+                <div class="audio-info">
+                    <div class="audio-title">Código Fantasma</div>
+                    <div class="audio-book">Lila y el Misterio de la Luz Robada</div>
+                    <audio controls>
+                        <source src="./neo/Código Fantasma.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+            </div>
+
 
         </div>
     </div>
@@ -1111,6 +1206,9 @@
                          break;
                         case 'lila':
                         bookCard = document.querySelector('.book-card img[alt="lila"]').closest('.book-card');
+                         break;
+                         case 'neo':
+                        bookCard = document.querySelector('.book-card img[alt="neo"]').closest('.book-card');
                          break;
                     }
                 if (bookCard) {
