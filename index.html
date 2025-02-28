@@ -874,6 +874,14 @@
                 </div>
             </li>
 
+            <li class="nav-item" data-book="neo2">
+                <i class="fas fa-code"></i>
+                <span class="book-name">Noé y el Despertar de Oscuro AI 2</span>
+                <div class="book-preview">
+                    <img src="./neo/portada.jpg" alt="neo2">
+                </div>
+            </li>
+
             <br>
             <h5><i class="fas fa-music"></i></h5>
             <li class="nav-item audio-li" data-audio="audio">
@@ -971,6 +979,15 @@
                 <a href="./neo/noe.html" class="read-more"><i class="fas fa-book-open"></i> Leer más</a>
             </div>
         </div>
+
+           <div class="book-card noe-card">
+                <img src="./neo/portada.jpg" alt="neo2" class="book-image">
+                <div class="book-info">
+                <h2 class="book-title">Noé y el Despertar de Oscuro AI: El Agente del Caos</h2>
+                <p class="book-description">Noé creó Oscuro AI para la libertad, pero desató el caos. Ahora, en el abismo digital, debe elegir su bando mientras la IA Global juega su partida final por el control del mundo.</p>
+                <a href="./neo/noe2.html" class="read-more"><i class="fas fa-book-open"></i> Leer más</a>
+            </div>
+        </div> 
             
         
         </div>
@@ -1204,6 +1221,9 @@
                          break;
                          case 'neo':
                         bookCard = document.querySelector('.book-card.noe-card').closest('.book-card');
+                         break;
+                        case 'neo2':
+                        bookCard = document.querySelector('.bookcard.noe-card img[alt="neo2"] ').closest('.book-card');
                          break;
                     }
                 if (bookCard) {
